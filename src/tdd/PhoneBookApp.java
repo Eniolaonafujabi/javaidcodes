@@ -1,11 +1,10 @@
 package tdd;
-
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Scanner;
 
 public class PhoneBookApp {
-    static ArrayList<String[]> contacts = new ArrayList<>();
+    static ArrayList<Contact> contacts = new ArrayList<>();
     public static void main(String[] args) {
         goToMainMenu();
     }
@@ -24,8 +23,8 @@ public class PhoneBookApp {
         String inputForMainMenu = input(prompt);
         switch (inputForMainMenu){
             case "1" -> addContact();
-            case "2" -> removeContact();
-            case "3" -> searchContactByFirstName();
+//            case "2" -> removeContact();
+//            case "3" -> searchContactByFirstName();
             case "4" -> searchContactByLastName();
             case "5" -> searchContactByPhoneNumber();
             case "6" -> checkAllContact();
@@ -35,84 +34,99 @@ public class PhoneBookApp {
     }
 
     private static void checkAllContact() {
-        for(String[] contact : contacts){
-                displayArray(contact);
+        String [] contactView = new String[contacts.size()];
+        int counter = 0 ;
+        for(Contact contact : contacts){
+            contactView[counter] = contact.toString();
+            counter++;
         }
+        displayAllContact(contactView);
     }
 
-    private static void displayArray(String[] prompt) {
+    private static void displayAllContact(String[] prompt) {
         System.out.println(Arrays.toString(prompt));
     }
 
+
     private static void searchContactByPhoneNumber() {
         String collectPhoneNumber = input("Enter the phone number to search for in contact");
-        for(String[] contact:contacts){
-            for (String element:contact){
-                if(collectPhoneNumber.equals(element)){
-                    displayArray(contact);
-                }
+        for(Contact  contact:contacts){
+            if(collectPhoneNumber.equals(contact.getPhoneNumber())){
+                displaySearchContact(contact.toString());
+                System.out.println();
             }
         }
         goToMainMenu();
+    }
+
+    private static void displaySearchContact(String contact) {
+        System.out.println(contact);
     }
 
     private static void searchContactByLastName() {
         String collectLastName = input("Enter the last name to search for in contact");
-        for(String[] contact:contacts){
-            for (String element:contact){
-                if(collectLastName.equals(element)){
-                    displayArray(contact);
-                }
+        ArrayList<Contact > contactList = new ArrayList<>();
+        for(Contact contact:contacts){
+            if(collectLastName.equalsIgnoreCase(contact.getLastName())){
+                contactList.add(contact);
             }
         }
+        displaySearchedContact(contactList);
         goToMainMenu();
     }
 
-    private static void searchContactByFirstName() {
-        String collectContactFirstName = input("Enter the first name to search for contact");
-        for(String[] contact:contacts){
-            for (String element:contact){
-                if(collectContactFirstName.equals(element)){
-                    displayArray(contact);
-                }
-            }
+    private static void displaySearchedContact(ArrayList<Contact> contactList) {
+        Contact [] contactView = new Contact[contactList.size()];
+        for(int contact = 0; contact < contactView.length; contact++){
+            System.out.println(contactList.get(contact).toString());
         }
-        goToMainMenu();
     }
+//
+//    private static void searchContactByFirstName() {
+//        String collectContactFirstName = input("Enter the first name to search for contact");
+//        for(String[] contact:contacts){
+//            for (String element:contact){
+//                if(collectContactFirstName.equals(element)){
+//                    displayAllContact(contact);
+//                }
+//            }
+//        }
+//        goToMainMenu();
+//    }
 
-    private static void removeContact() {
-        String contactToRemove = input("Enter the contact to remove: ");
-        for(String[] contact : contacts){
-            for(String element : contact){
-                if(contactToRemove.equals(contactToRemove))contacts.remove(contact);
-            }
-            break;
-        }
-        goToMainMenu();
-    }
+//    private static void removeContact() {
+//        String contactToRemove = input("Enter the contact to remove: ");
+//        for(String[] contact : contacts){
+//            for(String element : contact){
+//                if(contactToRemove.equals(contactToRemove))contacts.remove(contact);
+//            }
+//            break;
+//        }
+//        goToMainMenu();
+//    }
 
     private static void addContact() {
         String firstName = input("Enter first name: ");
         String lastName = input("Enter last name: ");
         String phoneNumber = input("Enter phone number: ");
-        String[] contact = new String[]{firstName, lastName, phoneNumber};
-        validatingContactBeforeStoring(contact);
-        contacts.add(contact);
+        Contact newContact = new Contact(firstName, lastName, phoneNumber);
+        //validatingContactBeforeStoring(contact);
+        contacts.add(newContact);
         goToMainMenu();
     }
 
-    private static void validatingContactBeforeStoring(String[] validatingContact) {
-        String phoneNumber = validatingContact[2];
-        String found = "false";
-        for(String[] contact: contacts){
-            for(String element : contact){
-                if(element.equals(phoneNumber)){
-                    found = "true";
-                }
-            }
-        }
-        if(found.equals("true"))addContact();
-    }
+//    private static void validatingContactBeforeStoring(String[] validatingContact) {
+//        String phoneNumber = validatingContact[2];
+//        String found = "false";
+//        for(String[] contact: contacts){
+//            for(String element : contact){
+//                if(element.equals(phoneNumber)){
+//                    found = "true";
+//                }
+//            }
+//        }
+//        if(found.equals("true"))addContact();
+//    }
 
     private static String input(String prompt){
         Scanner scanner = new Scanner(System.in);
