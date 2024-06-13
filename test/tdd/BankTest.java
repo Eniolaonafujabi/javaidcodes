@@ -37,7 +37,6 @@ class BankTest {
         bank.withdraw("8146997803","pin",500);
         assertEquals(500,bank.checkBalance("8146997803","pin"));
     }
-
     @Test
     public void testThatICanTransfer() {
         bank.addCustormer("Onafujabi Eniola","pin","08146997803");

@@ -22,7 +22,6 @@ public class Bank {
         Account account = findAccount(accountNo);
         account.deposit(amount);
     }
-
     public void withdraw(String acountNo, String pin, double amount) {
         Account account = findAccount(acountNo);
         account.withdraw(amount,pin);

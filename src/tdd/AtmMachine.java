@@ -72,13 +72,11 @@ public class AtmMachine {
         gtBank.addCustormer(name, password, phoneNumber);
         goToMainMenu();
     }
-
     private static String input(String prompt){
         Scanner sc = new Scanner(System.in);
         System.out.println(prompt);
         return sc.nextLine();
     }
-
     private static void output(String prompt){
         System.out.println(prompt);
     }
