@@ -11,7 +11,6 @@ public class AirConditional {
         }
         return false;
     }
-
     public boolean increaseAirCondition(int temperature) {
         int higest = 30;
         int lowest = 16;

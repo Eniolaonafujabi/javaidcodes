@@ -120,7 +120,6 @@ public class BikeTest {
         bike.deceleration(-10);
         assertEquals(30,bike.checkCurrentSpeedMilesPerHour());
     }
-
     @Test
     public void testThatICanMoveFromGearToAnotherGearByIncreasing(){
         Bike bike = new Bike();

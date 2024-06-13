@@ -12,6 +12,7 @@ public class AccountTest {
     public void setUp() {
         account = new Account("Onafujabi eniola","pin","1");
     }
+
     @Test
     public void testAccountBalanceIsZero() {
         assertEquals(0,account.checkAccountBalance("pin"));

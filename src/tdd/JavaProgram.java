@@ -47,7 +47,6 @@ public class JavaProgram {
         }
         return largest;
     }
-
     public int smallestNumberInArray(int [] expecting){
         int smallest = expecting[0];
         for(int i=1; i<expecting.length; i++){

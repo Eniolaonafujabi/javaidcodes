@@ -43,6 +43,7 @@ public class AirConditionalTest {
         boolean ifStateIncrease = dualInverter.increaseAirCondition(37);
         assertFalse(ifStateIncrease);
     }
+
     @Test
     public void testAirConditionalCanBeDecrease(){
         AirConditional dualInverter = new AirConditional();

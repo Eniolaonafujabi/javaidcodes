@@ -13,7 +13,6 @@ public class Contact {
                 ", phoneNumber='" + phoneNumber + '\'' +
                 '}';
     }
-
     public Contact(String firstName, String lastName, String phoneNumber) {
         this.firstName = firstName;
         this.lastName = lastName;

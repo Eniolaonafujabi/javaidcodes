@@ -18,7 +18,6 @@ public class Bike {
     public void acceleration(int increaseOfSpeed) {
         milesPerHour += increaseOfSpeed;
     }
-
     public void changeGear(int milesPerHour){
         if(milesPerHour>=0&&milesPerHour<=20)
             this.Gear = "Gear 1";

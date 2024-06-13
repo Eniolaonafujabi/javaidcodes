@@ -26,6 +26,7 @@ class AccountBalanceTest {
         eniola.deposit(-5000);
         assertEquals(3000, eniola.checkBalance("pin"));
     }
+
     @Test
     public void testThatICanWithdrawFromMyBalance() {
         AccountBalance eniola = new AccountBalance();
