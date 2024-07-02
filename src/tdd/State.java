@@ -6,16 +6,20 @@ public class State {
 
     public GeoPoliticalZone checkZone(String state){
         for(GeoPoliticalZone z : GeoPoliticalZone.values()){
-            if(z.toString().equalsIgnoreCase(state)){
-                return GeoPoliticalZone.valueOf(z.name());
+            boolean checking = checkState(z,state);
+            if(checking){
+                return z;
             }
         }
         return null;
     }
-
-    public static void main(String[] args) {
-        State s = new State();
-        GeoPoliticalZone z1 = s.checkZone("Lagos");
-        System.out.println(z1);
+    private boolean checkState(GeoPoliticalZone zone , String state){
+        String[] listOfStates = zone.getState();
+        for(String s : listOfStates){
+            if(s.equalsIgnoreCase(state)){
+                return true;
+            }
+        }
+        return false;
     }
 }
