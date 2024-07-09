@@ -27,10 +27,12 @@ public class Volume {
     }
 
     public void decreaseVolume() {
-        this.volume--;
+        if(volume==0){
+        }else {this.volume--;}
     }
 
     public void decreaseVolume(int number) {
-        this.volume-=number;
+        if(volume==0){}else {this.volume-=number;}
     }
+
 }

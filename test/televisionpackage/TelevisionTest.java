@@ -72,5 +72,12 @@ class TelevisionTest {
         samsung.decreaseVolume();
         assertEquals(new Volume(0),samsung.getStateOfVolume());
     }
-}
 
+    @Test
+    public void testThatICanChangeChannel(){
+        assertFalse(samsung.checkStateOfTelevision());
+        samsung.turnOn();
+        assertTrue(samsung.checkStateOfTelevision());
+        assertEquals(new Channel(1),samsung.getStateOfChannel());
+    }
+}
