@@ -45,7 +45,9 @@ class TelevisionTest {
         samsung.turnOn();
         assertTrue(samsung.checkStateOfTelevision());
         assertEquals(new Volume(),samsung.getStateOfVolume());
-        samsung.increaseVolume(100);
+        for(int i = 0 ; i < 100 ; i++){
+            samsung.increaseVolume();
+        }
         assertEquals(new Volume(100),samsung.getStateOfVolume());
         samsung.increaseVolume();
         assertEquals(new Volume(100),samsung.getStateOfVolume());
@@ -78,6 +80,6 @@ class TelevisionTest {
         assertFalse(samsung.checkStateOfTelevision());
         samsung.turnOn();
         assertTrue(samsung.checkStateOfTelevision());
-        assertEquals(new Channel(1),samsung.getStateOfChannel());
+        assertEquals(new Channel(),samsung.getStateOfChannel());
     }
 }
