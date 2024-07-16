@@ -31,87 +31,87 @@ class TurtleTest {
 
     @Test
     public void testThatICanMoveFromEastToSouth(){
-    assertSame(Direction.EAST,ijapa.getCurrentDirection());
+    assertSame(Direction.East,ijapa.getCurrentDirection());
     ijapa.turnRight();
-    assertSame(Direction.SOUTH,ijapa.getCurrentDirection());
+    assertSame(Direction.South,ijapa.getCurrentDirection());
     }
 
     @Test
     public void testThatICanMoveFromSouthToWest(){
-        assertSame(Direction.EAST,ijapa.getCurrentDirection());
+        assertSame(Direction.East,ijapa.getCurrentDirection());
         ijapa.turnRight();
-        assertSame(Direction.SOUTH,ijapa.getCurrentDirection());
+        assertSame(Direction.South,ijapa.getCurrentDirection());
         ijapa.turnRight();
-        assertSame(Direction.WEST,ijapa.getCurrentDirection());
+        assertSame(Direction.West,ijapa.getCurrentDirection());
     }
 
     @Test
     public void testThatICanMoveFromWestToNorth(){
-        assertSame(Direction.EAST,ijapa.getCurrentDirection());
+        assertSame(Direction.East,ijapa.getCurrentDirection());
         ijapa.turnRight();
-        assertSame(Direction.SOUTH,ijapa.getCurrentDirection());
+        assertSame(Direction.South,ijapa.getCurrentDirection());
         ijapa.turnRight();
-        assertSame(Direction.WEST,ijapa.getCurrentDirection());
+        assertSame(Direction.West,ijapa.getCurrentDirection());
         ijapa.turnRight();
         assertSame(Direction.North,ijapa.getCurrentDirection());
     }
 
     @Test
     public void testThatICanMoveFromNorthToEast(){
-        assertSame(Direction.EAST,ijapa.getCurrentDirection());
+        assertSame(Direction.East,ijapa.getCurrentDirection());
         ijapa.turnRight();
-        assertSame(Direction.SOUTH,ijapa.getCurrentDirection());
+        assertSame(Direction.South,ijapa.getCurrentDirection());
         ijapa.turnRight();
-        assertSame(Direction.WEST,ijapa.getCurrentDirection());
+        assertSame(Direction.West,ijapa.getCurrentDirection());
         ijapa.turnRight();
         assertSame(Direction.North,ijapa.getCurrentDirection());
         ijapa.turnRight();
-        assertSame(Direction.EAST,ijapa.getCurrentDirection());
+        assertSame(Direction.East,ijapa.getCurrentDirection());
     }
 
     @Test
     public void teatThatICanTurnFromEastToNorth(){
-        assertSame(Direction.EAST,ijapa.getCurrentDirection());
+        assertSame(Direction.East,ijapa.getCurrentDirection());
         ijapa.turnLeft();
         assertSame(Direction.North,ijapa.getCurrentDirection());
     }
 
     @Test
     public void teatThatICanTurnFromNorthToWest(){
-        assertSame(Direction.EAST,ijapa.getCurrentDirection());
+        assertSame(Direction.East,ijapa.getCurrentDirection());
         ijapa.turnLeft();
         assertSame(Direction.North,ijapa.getCurrentDirection());
         ijapa.turnLeft();
-        assertSame(Direction.WEST,ijapa.getCurrentDirection());
+        assertSame(Direction.West,ijapa.getCurrentDirection());
     }
 
     @Test
     public void teatThatICanTurnFromWestToSOUTH(){
-        assertSame(Direction.EAST,ijapa.getCurrentDirection());
+        assertSame(Direction.East,ijapa.getCurrentDirection());
         ijapa.turnLeft();
         assertSame(Direction.North,ijapa.getCurrentDirection());
         ijapa.turnLeft();
-        assertSame(Direction.WEST,ijapa.getCurrentDirection());
+        assertSame(Direction.West,ijapa.getCurrentDirection());
         ijapa.turnLeft();
-        assertSame(Direction.SOUTH,ijapa.getCurrentDirection());
+        assertSame(Direction.South,ijapa.getCurrentDirection());
     }
 
     @Test
     public void teatThatICanTurnFromWestToEast(){
-        assertSame(Direction.EAST,ijapa.getCurrentDirection());
+        assertSame(Direction.East,ijapa.getCurrentDirection());
         ijapa.turnLeft();
         assertSame(Direction.North,ijapa.getCurrentDirection());
         ijapa.turnLeft();
-        assertSame(Direction.WEST,ijapa.getCurrentDirection());
+        assertSame(Direction.West,ijapa.getCurrentDirection());
         ijapa.turnLeft();
-        assertSame(Direction.SOUTH,ijapa.getCurrentDirection());
+        assertSame(Direction.South,ijapa.getCurrentDirection());
         ijapa.turnLeft();
-        assertSame(Direction.EAST,ijapa.getCurrentDirection());
+        assertSame(Direction.East,ijapa.getCurrentDirection());
     }
 
     @Test
     public void testThatICanMoveForwardWhenFacingEast(){
-        assertSame(Direction.EAST,ijapa.getCurrentDirection());
+        assertSame(Direction.East,ijapa.getCurrentDirection());
         assertEquals(new Position(0,0),ijapa.getCurrentPosition());
         ijapa.moveForward(5);
         assertEquals(new Position(0,4),ijapa.getCurrentPosition());
@@ -119,9 +119,9 @@ class TurtleTest {
 
     @Test
     public void testThatICanMoveForwardWhenFacingSouth(){
-        assertSame(Direction.EAST,ijapa.getCurrentDirection());
+        assertSame(Direction.East,ijapa.getCurrentDirection());
         ijapa.turnRight();
-        assertSame(Direction.SOUTH,ijapa.getCurrentDirection());
+        assertSame(Direction.South,ijapa.getCurrentDirection());
         assertEquals(new Position(0,0),ijapa.getCurrentPosition());
         ijapa.moveForward(5);
         assertEquals(new Position(4,0),ijapa.getCurrentPosition());
@@ -129,11 +129,11 @@ class TurtleTest {
 
     @Test
     public void testThatICanMoveForwardWhenFacingWest(){
-        assertSame(Direction.EAST,ijapa.getCurrentDirection());
+        assertSame(Direction.East,ijapa.getCurrentDirection());
         ijapa.turnRight();
-        assertSame(Direction.SOUTH,ijapa.getCurrentDirection());
+        assertSame(Direction.South,ijapa.getCurrentDirection());
         ijapa.turnRight();
-        assertSame(Direction.WEST,ijapa.getCurrentDirection());
+        assertSame(Direction.West,ijapa.getCurrentDirection());
         assertEquals(new Position(0,0),ijapa.getCurrentPosition());
         ijapa.moveForward(5);
         assertEquals(new Position(0,-4),ijapa.getCurrentPosition());
@@ -141,11 +141,11 @@ class TurtleTest {
 
     @Test
     public void testThatICanMoveForwardWhenFacingNorth(){
-        assertSame(Direction.EAST,ijapa.getCurrentDirection());
+        assertSame(Direction.East,ijapa.getCurrentDirection());
         ijapa.turnRight();
-        assertSame(Direction.SOUTH,ijapa.getCurrentDirection());
+        assertSame(Direction.South,ijapa.getCurrentDirection());
         ijapa.turnRight();
-        assertSame(Direction.WEST,ijapa.getCurrentDirection());
+        assertSame(Direction.West,ijapa.getCurrentDirection());
         ijapa.turnRight();
         assertSame(Direction.North,ijapa.getCurrentDirection());
         assertEquals(new Position(0,0),ijapa.getCurrentPosition());

@@ -15,10 +15,6 @@ public class Volume {
         }else {this.volume++;}
     }
 
-    public void increaseVolume(int number) {
-        if (volume == 100) {
-        }else{this.volume+=number;}
-    }
 
     @Override
     public boolean equals(Object obj) {
@@ -29,10 +25,6 @@ public class Volume {
     public void decreaseVolume() {
         if(volume==0){
         }else {this.volume--;}
-    }
-
-    public void decreaseVolume(int number) {
-        if(volume==0){}else {this.volume-=number;}
     }
 
 }

@@ -4,7 +4,7 @@ import static turtlegame.Direction.*;
 
 public class Turtle {
 
-    private Direction currentDirection = EAST;
+    private Direction currentDirection = East;
     private Position currentPosition = new Position(0, 0);
     private boolean penIsUp = true;
 
@@ -29,27 +29,29 @@ public class Turtle {
     }
 
     public void turnRight() {
-        if (currentDirection == North) {face(EAST);}
-        else if (currentDirection == WEST) {face(North);}
-        else if (currentDirection == SOUTH){face(WEST);}
-        else if(currentDirection == EAST){face(SOUTH);}
+        currentDirection = currentDirection.turnRight();
+//        if (currentDirection == North) {face(East);}
+//        else if (currentDirection == West) {face(North);}
+//        else if (currentDirection == South){face(West);}
+//        else if(currentDirection == East){face(South);}
     }
 
     public void turnLeft() {
-        if (currentDirection == North) {face(WEST);}
-        else if (currentDirection == WEST) {face(SOUTH);}
-        else if (currentDirection == SOUTH){face(EAST);}
-        else if(currentDirection == EAST){face(North);}
+        currentDirection = currentDirection.turnLeft();
+//        if (currentDirection == North) {face(West);}
+//        else if (currentDirection == West) {face(South);}
+//        else if (currentDirection == South){face(East);}
+//        else if(currentDirection == East){face(North);}
     }
 
-    private void face(Direction direction) {
-        currentDirection = direction;
-    }
+//    private void face(Direction direction) {
+//        currentDirection = direction;
+//    }
 
     public void moveForward(int number) {
-        if(currentDirection == EAST)currentPosition.changeColumnPosition(number-1,currentDirection);
-        else if(currentDirection == SOUTH)currentPosition.changeRowPosition(number-1,currentDirection);
-        else if (currentDirection == WEST)currentPosition.changeColumnPosition(number-1,currentDirection);
+        if(currentDirection == East)currentPosition.changeColumnPosition(number-1,currentDirection);
+        else if(currentDirection == South)currentPosition.changeRowPosition(number-1,currentDirection);
+        else if (currentDirection == West)currentPosition.changeColumnPosition(number-1,currentDirection);
         else if (currentDirection == North)currentPosition.changeRowPosition(number-1,currentDirection);
     }
 
