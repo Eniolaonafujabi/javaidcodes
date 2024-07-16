@@ -1,4 +1,4 @@
-package tdd;
+package atm;
 
 import java.util.Scanner;
 
