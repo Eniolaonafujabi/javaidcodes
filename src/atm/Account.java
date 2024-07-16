@@ -1,4 +1,4 @@
-package tdd;
+package atm;
 
 public class Account {
     private String pin;
