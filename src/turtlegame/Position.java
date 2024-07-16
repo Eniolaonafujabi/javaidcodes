@@ -11,13 +11,13 @@ public class Position {
     }
 
     public void changeRowPosition(int step,Direction direction) {
-       if(Direction.SOUTH == direction)row+=step;
+       if(Direction.South == direction)row+=step;
        else if (Direction.North==direction)row-=step;
     }
 
     public void changeColumnPosition(int step, Direction direction) {
-        if (Direction.WEST==direction)column-=step;
-        else if (Direction.EAST==direction)column+=step;
+        if (Direction.West ==direction)column-=step;
+        else if (Direction.East ==direction)column+=step;
     }
 
     @Override
